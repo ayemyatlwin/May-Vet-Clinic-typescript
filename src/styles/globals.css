@@ -1,27 +1,128 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap");
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --background-color: #54bab9;
+  --heading-color: #54bab9;
+  --search-color: rgba(68, 68, 68, 0.5);
+  --text-color: #000000;
+  --text-white-color: #ffffff;
+  --subtitle-color: #444444;
+  --placeHolder-color: #acb3c0;
+  --add-btn-color: #ffffff;
+  --delete-button-color: #cd211d;
+  --update-button-color: #edc339;
+  --message-box-color: #1ab45d;
+  --accent-color: #acb3c0;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+* {
+  font-family: "Poppins", sans-serif;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.headerText {
+  color: var(--heading-color);
+  font-size: 14px;
+  text-align: start;
+}
+.Title {
+  color: var(--heading-color);
+  font-size: 22px;
+  text-align: start;
+}
+.bodyText {
+  color: var(--text-color);
+  font-size: 14px;
+  text-align: start;
+}
+.text-placeholder {
+  color: var(--text-color);
+}
+
+nav {
+  background-color: var(--background-color);
+  color: var(--text-white-color);
+}
+
+.text {
+  color: var(--text-color);
+  font-size: 14px;
+}
+
+.data-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.popup {
+  position: absolute;
+  top: 50%;
+  right: 100%;
+  background-color: var(--add-btn-color);
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  border: 1px solid #ccc;
+  z-index: 1;
+  padding: 3px;
+  min-width: 90px;
+  border-radius: 4px;
+  display: block;
+}
+
+.popup button {
+  padding: 5px;
+  cursor: pointer;
+}
+.popup button:hover {
+  background-color: var(--accent-color);
+}
+
+.popup.active {
+  display: block;
+}
+
+.inputSearch {
+  border: 1px solid var(--accent-color);
+  border-radius: 16px;
+  margin: 0;
+  padding: 4px 20px;
+}
+.selectBorders {
+  border: 1px solid var(--accent-color);
+}
+
+.add-btn {
+  background-color: var(--background-color);
+  color: var(--add-btn-color);
+  display: flex;
+  gap: 7px;
+  border: 1px;
+  border-radius: 16px;
+  padding: 4px 20px;
+  margin: 0;
+}
+.inputBorder {
+  border: 1px solid var(--background-color);
+}
+
+.save-btn {
+  background: var(--background-color);
+  color: var(--text-color);
+  padding: 6px 20px;
+}
+
+.update-btn {
+  background: var(--update-button-color);
+  color: var(--text-color);
+  padding: 6px 20px;
+}
+.cancel-btn {
+  border: 1px solid var(--subtitle-color);
+  padding: 6px 20px;
+}
+
+.pagination-btn {
+  color: var(--background-color);
 }
