@@ -25,7 +25,6 @@ interface TableProps {
 const Table: React.FC<TableProps> = ({ data, setData, filteredPets, selectedData }) => {
   const { selectedRow, editModal, setEditModal, searchQuery } = useAppContext();
 
-  // console.log("staus", selectedData);
 
   const rowsPerPage = selectedRow; //rows like 10,15,20
 
@@ -63,25 +62,18 @@ const Table: React.FC<TableProps> = ({ data, setData, filteredPets, selectedData
 
   const deleteProduct = async (id: string) => {
     Swal.fire({
-      title: "Are you sure?",
-      text: "You won't be able to revert this!",
-      icon: "warning",
+      title: "Confirmation",
       showCancelButton: true,
-      confirmButtonColor: "#CD211D",
+      confirmButtonColor: "#cd211d",
       cancelButtonColor: "#444444",
-      confirmButtonText: "Yes, delete it!",
+      confirmButtonText: "Delete",
+      html: "<small>Are you sure you want to delete this patient?</small>",
     }).then(async (result) => {
       if (result.isConfirmed) {
         try {
           await axios.delete(
             `https://patient-list-w0nz.onrender.com/patients/${id}`
           );
-          Swal.fire("Deleted!", "The item has been deleted.", "success");
-          toast.error("deleted successfully!", {
-            position: "bottom-left",
-            autoClose: 300,
-            theme: "light",
-          });
         } catch (error) {
           Swal.fire(
             "Error",

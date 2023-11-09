@@ -13,7 +13,7 @@ interface EditPatientProps {
 }
 
 const EditPatient = ({ pet }: EditPatientProps) => {
-  const { setEditModal } = useAppContext();
+  const { editModal, setEditModal } = useAppContext();
 
   const [patientData, setPatientData] = useState<dataTypes>({
     id: pet.id,
@@ -79,7 +79,7 @@ const EditPatient = ({ pet }: EditPatientProps) => {
 
   return (
     <>
-      <div className="flex justify-center px-10 items-center overflow-x-hidden shadow-2xl overflow-y-auto fixed inset-0 z-50">
+      <div className={`flex justify-center px-10 items-center overflow-x-hidden shadow-2xl overflow-y-auto fixed inset-0 z-50 bg-opacity-100  ${editModal ? " bg-opacity-50 bg-gray-700" : ""}`} >
         <div className="relative w-[50%]  my-6 mx-auto ">
           <div className="border-0 rounded-lg shadow-xl relative flex flex-col w-full bg-white outline-none">
             <div className="flex justify-end p-3 rounded-t">
@@ -94,7 +94,7 @@ const EditPatient = ({ pet }: EditPatientProps) => {
               </button>
             </div>
             <h3 className="mx-auto font-semibold Title">Update Patient</h3>
-            <h3 className="mx-auto text-[14px] ">
+            <h3 className="mx-auto text-[14px] py-2 ">
               Enter Updated Patient Information Below
             </h3>
 
@@ -174,7 +174,7 @@ const EditPatient = ({ pet }: EditPatientProps) => {
                           checked={patientData.gender == "Male" ? true : false}
                           type="radio"
                           name="inline-radio-group"
-                          className="w-4 h-4 text-blue-600 bg-gray-100 inputBorder"
+                          className="w-4 h-4 radio-color bg-gray-100 inputBorder"
                         />
                       </div>
                       <div className="flex gap-3 ">
@@ -191,7 +191,7 @@ const EditPatient = ({ pet }: EditPatientProps) => {
                           id="inline-2-radio"
                           type="radio"
                           name="inline-radio-group"
-                          className="w-4 h-4 text-blue-600 bg-gray-100 inputBorder"
+                          className="w-4 h-4 radio-color bg-gray-100 inputBorder"
                         />
                       </div>
                     </div></div>
@@ -250,7 +250,7 @@ const EditPatient = ({ pet }: EditPatientProps) => {
                 </div>
               </form>
             </div>
-            <div className="flex justify-center py-3 gap-5">
+            <div className="flex justify-center pt-7 pb-12 gap-5">
               <button
                 onClick={handleSave}
                 className="w-20 update-btn rounded-md text-center"
