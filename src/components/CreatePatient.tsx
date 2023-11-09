@@ -298,7 +298,7 @@ const CreatePatient: React.FC = () => {
                           className="block w-full p-2 mb-1 text-sm text-gray-900 border inputBorder rounded bg-inherit"
                         >
                           <option value="" disabled>
-                            Select a status
+                            Select a Township
                           </option>
                           <option value="Yangon">Yangon</option>
                           <option value="Mandalay">Mandalay</option>
@@ -324,7 +324,7 @@ const CreatePatient: React.FC = () => {
                           className="block w-full p-2 mb-1 text-sm text-gray-900 border inputBorder rounded bg-inherit"
                         >
                           <option value="" disabled>
-                            Select a status
+                            Select a City
                           </option>
                           <option value="Pazundaung">Pazundaung</option>
                           <option value="Myaynigone">Myaynigone</option>
