@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import allergy from "../images/allergy.png";
 import picky_eater from "../images/picky_eater.png";
@@ -11,7 +11,6 @@ import EditPatient from "./EditPatient";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { CircularProgress } from "@mui/material";
-import Pagination from "./Pagination";
 import { dataTypes } from "@/pages";
 import { useAppContext } from "@/context/AppContext";
 
@@ -69,6 +68,11 @@ const Table: React.FC<TableProps> = ({ data, setData, filteredPets, selectedData
           await axios.delete(
             `https://patient-list-w0nz.onrender.com/patients/${id}`
           );
+          toast.error("delected successfully!", {
+            position: "bottom-left",
+            autoClose: 300,
+            theme: "colored",
+          });
         } catch (error) {
           Swal.fire(
             "Error",
@@ -114,7 +118,7 @@ const Table: React.FC<TableProps> = ({ data, setData, filteredPets, selectedData
                 <th className="headerText p-2">Date of Birth</th>
                 <th className="headerText p-2">Contact No</th>
                 <th className="headerText p-2">Address</th>
-                <th className="headerText p-2">Actions</th>
+                <th className="headerText p-2"></th>
               </tr>
             </thead>
             <tbody>
@@ -319,19 +323,7 @@ const Table: React.FC<TableProps> = ({ data, setData, filteredPets, selectedData
           </table>
         )}
       </div>
-      <div className="flex justify-center items-center my-5">
-        {rowsPerPage == 20 ? (
-          <></>
-        ) : (
-          <>
-            <Pagination
-              data={data}
-              setData={setData}
-              rowsPerPage={rowsPerPage}
-            />
-          </>
-        )}
-      </div>
+
     </>
   );
 };

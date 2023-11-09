@@ -133,7 +133,6 @@ nav {
 }
 .cancel-btn {
   border: 1px solid var(--subtitle-color);
-  padding: 6px 20px;
 }
 
 .pagination-btn {

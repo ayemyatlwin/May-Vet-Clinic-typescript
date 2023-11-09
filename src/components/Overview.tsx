@@ -15,7 +15,7 @@ interface OverviewProps {
 
 }
 
-const Overview: React.FC<OverviewProps> = ({ handleSearchInputChange, setSelectedStatus }) => {
+const Overview: React.FC<OverviewProps> = ({ handleSearchInputChange, setSelectedStatus, setData }) => {
     const { selectedRow, setSelectedRow, searchQuery } = useAppContext();
 
     const rowChangeHandler = (value: string) => {
@@ -43,6 +43,8 @@ const Overview: React.FC<OverviewProps> = ({ handleSearchInputChange, setSelecte
                             setSelectedStatus={setSelectedStatus}
                             valueOne="allergy"
                             valueTwo="picky_eat"
+                            viewOne="Picky Eater"
+                            viewTwo="Allergy"
 
                         />
                         <SelectSmall

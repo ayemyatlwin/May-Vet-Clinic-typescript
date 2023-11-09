@@ -7,6 +7,8 @@ interface SelectSmallProps {
     valueOne: string;
     valueTwo: string;
     valueThree?: string;
+    viewOne?: string;
+    viewTwo?: string;
     setSelectedStatus: React.Dispatch<React.SetStateAction<string>>;
 }
 
@@ -15,6 +17,8 @@ export default function SelectSmall({
     valueOne,
     valueTwo,
     valueThree,
+    viewOne,
+    viewTwo,
     setSelectedStatus
 }: SelectSmallProps) {
 
@@ -35,9 +39,9 @@ export default function SelectSmall({
 
                 <option value={val}>{val}</option>
 
-                <option value={valueOne}>{valueOne}</option>
+                <option value={valueOne}>{viewOne ? viewOne : valueOne}</option>
 
-                <option value={valueTwo}>{valueTwo}</option>
+                <option value={valueTwo}>{viewTwo ? viewTwo : valueTwo}</option>
 
                 {valueThree && <option value={valueThree}>{valueThree}</option>}
             </select>

@@ -33,8 +33,6 @@ export default function Home() {
     getData();
   }, [data])
 
-
-
   const handleSearchInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     setSearchQuery(e.target.value);
   };

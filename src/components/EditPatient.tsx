@@ -231,21 +231,51 @@ const EditPatient = ({ pet }: EditPatientProps) => {
                 <div className="flex flex-row gap-10 px-7">
                   <div className="w-[50%]">
                     <label className="block text-black text-sm mb-1 mt-1">City</label>
-                    <input
-                      name="city"
+                    <select
+                      required
+                      id="small"
                       value={patientData.city}
-                      onChange={handleInputChange}
-                      className="shadow appearance-none border inputBorder rounded w-full p-2 text-black"
-                    />
+                      onChange={(e) =>
+                        setPatientData({
+                          ...patientData,
+                          city: e.target.value,
+                        })
+                      }
+                      className="block w-full p-2 mb-1 text-sm text-gray-900 border inputBorder rounded bg-inherit"
+                    >
+                      <option value="" disabled>
+                        Select a status
+                      </option>
+                      <option value="Yangon">Yangon</option>
+                      <option value="Mandalay">Mandalay</option>
+                      <option value="Bago">Bago</option>
+
+                    </select>
+
                   </div>
                   <div className="w-[50%]">
                     <label className="block text-black text-sm mb-1 mt-1">Township</label>
-                    <input
-                      name="township"
+                    <select
+                      required
+                      id="small"
                       value={patientData.township}
-                      onChange={handleInputChange}
-                      className="shadow appearance-none border inputBorder rounded w-full p-2 text-black"
-                    />
+                      onChange={(e) =>
+                        setPatientData({
+                          ...patientData,
+                          township: e.target.value,
+                        })
+                      }
+                      className="block w-full p-2 mb-1 text-sm text-gray-900 border inputBorder rounded bg-inherit"
+                    >
+                      <option value="" disabled>
+                        Select a status
+                      </option>
+                      <option value="Pazundaung">Pazundaung</option>
+                      <option value="Myaynigone">Myaynigone</option>
+                      <option value="Hlaing">Hlaing</option>
+
+                    </select>
+
                   </div>
                 </div>
               </form>

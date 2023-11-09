@@ -59,7 +59,6 @@ const CreatePatient: React.FC = () => {
       hideProgressBar: false,
       closeOnClick: true,
       pauseOnHover: true,
-      draggable: true,
       progress: undefined,
       theme: "colored",
     });
@@ -140,8 +139,8 @@ const CreatePatient: React.FC = () => {
                           <option value="" disabled>
                             Select a status
                           </option>
-                          <option value="picky_eat">picky_eater</option>
-                          <option value="allergy">allergy</option>
+                          <option value="picky_eat">Picky Eater</option>
+                          <option value="allergy">Allergy</option>
                         </select>
                       </div>
                     </div>
@@ -286,7 +285,9 @@ const CreatePatient: React.FC = () => {
                         <label className="block text-black text-sm mb-1 mt-1">
                           City
                         </label>
-                        <input
+                        <select
+                          required
+                          id="small"
                           value={patientData.city}
                           onChange={(e) =>
                             setPatientData({
@@ -294,14 +295,25 @@ const CreatePatient: React.FC = () => {
                               city: e.target.value,
                             })
                           }
-                          className="shadow appearance-none border inputBorder rounded w-full p-2 text-black"
-                        />
+                          className="block w-full p-2 mb-1 text-sm text-gray-900 border inputBorder rounded bg-inherit"
+                        >
+                          <option value="" disabled>
+                            Select a status
+                          </option>
+                          <option value="Yangon">Yangon</option>
+                          <option value="Mandalay">Mandalay</option>
+                          <option value="Bago">Bago</option>
+
+                        </select>
+
                       </div>
                       <div className="w-[50%]">
                         <label className="block text-black text-sm mb-1 mt-1">
                           Township
                         </label>
-                        <input
+                        <select
+                          required
+                          id="small"
                           value={patientData.township}
                           onChange={(e) =>
                             setPatientData({
@@ -309,8 +321,17 @@ const CreatePatient: React.FC = () => {
                               township: e.target.value,
                             })
                           }
-                          className="shadow appearance-none border inputBorder rounded w-full p-2 text-black"
-                        />
+                          className="block w-full p-2 mb-1 text-sm text-gray-900 border inputBorder rounded bg-inherit"
+                        >
+                          <option value="" disabled>
+                            Select a status
+                          </option>
+                          <option value="Pazundaung">Pazundaung</option>
+                          <option value="Myaynigone">Myaynigone</option>
+                          <option value="Hlaing">Hlaing</option>
+
+                        </select>
+
                       </div>
                     </div>
                   </form>
