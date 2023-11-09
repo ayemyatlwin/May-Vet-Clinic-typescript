@@ -7,7 +7,6 @@ import 'react-toastify/dist/ReactToastify.css';
 import { useAppContext } from "@/context/AppContext";
 import { dataTypes } from "@/pages";
 import { RxCross2 } from "react-icons/rx"
-
 interface EditPatientProps {
   pet: dataTypes
 }
@@ -84,7 +83,7 @@ const EditPatient = ({ pet }: EditPatientProps) => {
           <div className="border-0 rounded-lg shadow-xl relative flex flex-col w-full bg-white outline-none">
             <div className="flex justify-end p-3 rounded-t">
               <button
-                className=" border-0 text-black float-right"
+                className=" border-0 text-black  float-right"
                 onClick={(e) => {
                   e.stopPropagation();
                   setEditModal(false);

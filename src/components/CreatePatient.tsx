@@ -90,7 +90,7 @@ const CreatePatient: React.FC = () => {
               >
                 <div className="flex justify-end p-3 rounded-t">
                   <button
-                    className=" border-0 text-black float-right"
+                    className=" border-0 hover:text-[#acb3c0] text-black float-right"
                     onClick={(e) => {
                       e.stopPropagation();
                       setShowModal(false);
@@ -339,10 +339,10 @@ const CreatePatient: React.FC = () => {
 
 
                 <div className="flex justify-center  pt-7 pb-12 gap-5">
-                  <button onClick={handleSave} className="w-20 save-btn rounded-md text-center">
+                  <button onClick={handleSave} className="w- hover:bg-[#acb3c0] save-btn rounded-md text-center">
                     Save
                   </button>
-                  <button onClick={() => setShowModal(false)} className="cancel-btn bg-inherit rounded-md w-20 text-center">
+                  <button onClick={() => setShowModal(false)} className="cancel-btn bg-inherit rounded-md hover:bg-[#acb3c0] w-20 text-center">
                     Cancel
                   </button>
                 </div>

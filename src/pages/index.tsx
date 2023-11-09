@@ -31,7 +31,7 @@ export default function Home() {
 
   useEffect(() => {
     getData();
-  }, [data])
+  }, [])
 
   const handleSearchInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     setSearchQuery(e.target.value);
@@ -58,7 +58,6 @@ export default function Home() {
     <>
       <Overview
         handleSearchInputChange={handleSearchInputChange}
-        setData={setData}
         setSelectedStatus={setSelectedStatus}
       />
       <Table data={data} selectedData={selectedData} setData={setData} filteredPets={filteredPets} />

@@ -1,5 +1,4 @@
-import { dataTypes } from "@/pages";
-import React, { useState } from "react";
+import React from "react";
 
 // Define
 interface SelectSmallProps {
@@ -38,11 +37,8 @@ export default function SelectSmall({
             >
 
                 <option value={val}>{val}</option>
-
                 <option value={valueOne}>{viewOne ? viewOne : valueOne}</option>
-
                 <option value={valueTwo}>{viewTwo ? viewTwo : valueTwo}</option>
-
                 {valueThree && <option value={valueThree}>{valueThree}</option>}
             </select>
         </>
