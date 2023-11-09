@@ -16,12 +16,11 @@ import { useAppContext } from "@/context/AppContext";
 
 interface TableProps {
   data: dataTypes[];
-  setData: (data: dataTypes[]) => void;
   filteredPets?: dataTypes[];
   selectedData?: dataTypes[];
 }
 
-const Table: React.FC<TableProps> = ({ data, setData, filteredPets, selectedData }) => {
+const Table: React.FC<TableProps> = ({ data, filteredPets, selectedData }) => {
   const { selectedRow, editModal, setEditModal, searchQuery } = useAppContext();
 
   const rowsPerPage = selectedRow; //rows like 10,15,20

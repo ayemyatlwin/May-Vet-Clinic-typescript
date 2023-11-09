@@ -8,7 +8,8 @@ import { useAppContext } from "@/context/AppContext";
 import { dataTypes } from "@/pages";
 import { RxCross2 } from "react-icons/rx"
 interface EditPatientProps {
-  pet: dataTypes
+  pet: dataTypes;
+
 }
 
 const EditPatient = ({ pet }: EditPatientProps) => {
@@ -42,8 +43,6 @@ const EditPatient = ({ pet }: EditPatientProps) => {
   const handleSave = async (e: React.MouseEvent<HTMLButtonElement>) => {
     e.stopPropagation();
     e.preventDefault();
-
-
     await updateData(patientData);
     setEditModal(false);
     toast.success("Patient is successfully edited!", {
@@ -56,6 +55,7 @@ const EditPatient = ({ pet }: EditPatientProps) => {
       progress: undefined,
       theme: "colored",
     });
+
   };
 
   const handleInputChange = (
