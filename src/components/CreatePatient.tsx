@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import add from "../images/add.png";
 import DatePicker from "react-datepicker"
@@ -26,7 +26,6 @@ const CreatePatient: React.FC = () => {
   const { showModal, setShowModal } = useAppContext();
 
 
-  const [selectedDate, setSelectedDate] = useState<Date | null>(null);
 
   const [patientData, setPatientData] = useState<PatientData>({
     petname: "",
@@ -63,13 +62,6 @@ const CreatePatient: React.FC = () => {
       theme: "colored",
     });
   };
-
-  useEffect(() => {
-    setPatientData({
-      ...patientData,
-      dateOfBirth: selectedDate?.toDateString() || "",
-    });
-  }, [selectedDate]);
 
   return (
     <>
@@ -238,8 +230,11 @@ const CreatePatient: React.FC = () => {
                           Date of birth
                         </label>
                         <DatePicker
-                          selected={selectedDate}
-                          onChange={(date) => setSelectedDate(date)}
+                          selected={new Date(patientData.dateOfBirth)}
+                          onChange={(date: any) => setPatientData({
+                            ...patientData,
+                            dateOfBirth: date?.toDateString() || "",
+                          })}
                           dateFormat="dd/MM/yyyy"
                           className="shadow appearance-none border inputBorder rounded  w-[17rem] p-2 mb-1  text-black"
                           placeholderText="Select Date"
