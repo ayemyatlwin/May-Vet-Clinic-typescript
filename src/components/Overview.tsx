@@ -11,12 +11,11 @@ import { dataTypes } from "@/pages";
 interface OverviewProps {
     handleSearchInputChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
     setData: React.Dispatch<React.SetStateAction<dataTypes[]>>;
-    data: dataTypes[];
     setSelectedStatus: React.Dispatch<React.SetStateAction<string>>;
 
 }
 
-const Overview: React.FC<OverviewProps> = ({ handleSearchInputChange, setSelectedStatus, data }) => {
+const Overview: React.FC<OverviewProps> = ({ handleSearchInputChange, setSelectedStatus }) => {
     const { selectedRow, setSelectedRow, searchQuery } = useAppContext();
 
     const rowChangeHandler = (value: string) => {
@@ -41,7 +40,6 @@ const Overview: React.FC<OverviewProps> = ({ handleSearchInputChange, setSelecte
                     <div className="flex gap-3 mt-3">
                         <SelectSmall
                             val="Status"
-                            data={data}
                             setSelectedStatus={setSelectedStatus}
                             valueOne="allergy"
                             valueTwo="picky_eat"
@@ -49,7 +47,6 @@ const Overview: React.FC<OverviewProps> = ({ handleSearchInputChange, setSelecte
                         />
                         <SelectSmall
                             val="Breed All"
-                            data={data}
                             setSelectedStatus={setSelectedStatus}
                             valueOne="Golden Retriever"
                             valueTwo="Beagle"

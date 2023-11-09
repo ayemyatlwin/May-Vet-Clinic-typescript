@@ -79,7 +79,7 @@ const EditPatient = ({ pet }: EditPatientProps) => {
 
   return (
     <>
-      <div className={`flex justify-center px-10 items-center overflow-x-hidden shadow-2xl overflow-y-auto fixed inset-0 z-50 bg-opacity-100  ${editModal ? " bg-opacity-50 bg-gray-700" : ""}`} >
+      <div className={`flex justify-center px-10 items-center overflow-x-hidden shadow-2xl overflow-y-auto fixed inset-0 z-50 bg-opacity-100  ${editModal ? " bg-opacity-50 bg-gray-700 transition-all " : ""}`} >
         <div className="relative w-[50%]  my-6 mx-auto ">
           <div className="border-0 rounded-lg shadow-xl relative flex flex-col w-full bg-white outline-none">
             <div className="flex justify-end p-3 rounded-t">

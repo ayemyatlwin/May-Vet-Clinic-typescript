@@ -7,7 +7,6 @@ interface SelectSmallProps {
     valueOne: string;
     valueTwo: string;
     valueThree?: string;
-    data: dataTypes[];
     setSelectedStatus: React.Dispatch<React.SetStateAction<string>>;
 }
 
@@ -19,17 +18,10 @@ export default function SelectSmall({
     setSelectedStatus
 }: SelectSmallProps) {
 
-
-
-
-
     const handleDirectorySelect = (selectedValue: string) => {
         setSelectedStatus(selectedValue)
 
     };
-
-
-
     return (
         <>
             <select

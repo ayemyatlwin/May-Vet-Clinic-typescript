@@ -31,30 +31,29 @@ export default function Home() {
 
   useEffect(() => {
     getData();
-  }, [])
+  }, [data])
 
 
 
   const handleSearchInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     setSearchQuery(e.target.value);
   };
-  const filteredPets = data?.filter((pet) => {
+  const filteredPets = data?.filter((pet) => { //searched data
     if (pet && pet.petname) {
       return pet.petname.toLowerCase().includes(searchQuery.toLowerCase());
     }
-    setData(filteredPets);
     return false;
   });
 
   const [selectedStatus, setSelectedStatus] = useState<string>("");
-
+  //status and breed selectbox data 
   const selectedData = data?.filter((pet) => {
     return (
       pet &&
       (pet.breed.includes(selectedStatus) || pet.status.includes(selectedStatus))
     );
-  })
 
+  })
 
 
   return (
@@ -63,7 +62,6 @@ export default function Home() {
         handleSearchInputChange={handleSearchInputChange}
         setData={setData}
         setSelectedStatus={setSelectedStatus}
-        data={data}
       />
       <Table data={data} selectedData={selectedData} setData={setData} filteredPets={filteredPets} />
 

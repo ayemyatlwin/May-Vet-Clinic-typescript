@@ -25,12 +25,7 @@ interface TableProps {
 const Table: React.FC<TableProps> = ({ data, setData, filteredPets, selectedData }) => {
   const { selectedRow, editModal, setEditModal, searchQuery } = useAppContext();
 
-
   const rowsPerPage = selectedRow; //rows like 10,15,20
-
-  const [skip, setSkip] = useState<Boolean>(false);
-  const [rev, setRev] = useState<Boolean>(false);
-
 
   const [selectedRows, setSelectedRows] = useState<string[]>([]);
   const [dropDownOpen, setDropDownOpen] = useState<string | null>(null);
@@ -86,6 +81,8 @@ const Table: React.FC<TableProps> = ({ data, setData, filteredPets, selectedData
   };
 
   const displayData = selectedData?.slice(0, rowsPerPage);
+
+
 
   return (
     <>
@@ -323,17 +320,17 @@ const Table: React.FC<TableProps> = ({ data, setData, filteredPets, selectedData
         )}
       </div>
       <div className="flex justify-center items-center my-5">
-        {/* {rowsPerPage == 20 ? (
+        {rowsPerPage == 20 ? (
           <></>
         ) : (
-          <> */}
-        <Pagination
-          data={displayData}
-          setData={setData}
-          rowsPerPage={rowsPerPage}
-        />
-        {/* </>
-        )} */}
+          <>
+            <Pagination
+              data={data}
+              setData={setData}
+              rowsPerPage={rowsPerPage}
+            />
+          </>
+        )}
       </div>
     </>
   );

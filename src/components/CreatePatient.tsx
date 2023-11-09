@@ -85,7 +85,7 @@ const CreatePatient: React.FC = () => {
 
       {showModal ? (
         <>
-          <div className={`flex justify-center px-10 items-center overflow-x-hidden shadow-2xl overflow-y-auto fixed inset-0 z-50 bg-opacity-100  ${showModal ? " bg-opacity-50 bg-gray-700" : ""}`}>
+          <div className={`flex justify-center px-10 items-center overflow-x-hidden shadow-2xl overflow-y-auto fixed inset-0 z-50 bg-opacity-100  ${showModal ? " bg-opacity-50 bg-gray-700 transition-all" : ""}`}>
             <div className="relative w-[50%]  my-6 mx-auto ">
               <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none"
               >

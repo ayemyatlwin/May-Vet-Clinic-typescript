@@ -12,15 +12,15 @@ const Pagination: React.FC<PaginationProps> = ({ setData, rowsPerPage, data }) =
     const skipTen = () => {
         // data &&
         //     setData(data?.slice(rowsPerPage - 1, data?.length - 1));
-        const next = data?.slice(rowsPerPage, data.length)
-        console.log(next);
+        // const next = data?.slice(rowsPerPage - 1, data.length - 1)
+        // console.log(next);
 
 
     };
     const revTen = () => {
         // data && setData(data?.slice(0, 10));
-        const back = data?.slice(0, 10);
-        console.log(back);
+        // const back = data?.slice(0, 10);
+        // console.log(back);
 
     };
 
