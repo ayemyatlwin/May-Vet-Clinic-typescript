@@ -1,4 +1,4 @@
-import React, { useEffect, useState, ChangeEvent } from "react";
+import React, { useState, ChangeEvent } from "react";
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import axios from "axios";
@@ -47,7 +47,7 @@ const EditPatient = ({ pet }: EditPatientProps) => {
 
     await updateData(patientData);
     setEditModal(false);
-    toast.success("Edited Successfully", {
+    toast.success("Patient is successfully edited!", {
       position: "bottom-left",
       autoClose: 300,
       hideProgressBar: false,

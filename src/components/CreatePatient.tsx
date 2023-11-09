@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import add from "../images/add.png";
 import DatePicker from "react-datepicker"
@@ -26,6 +26,7 @@ const CreatePatient: React.FC = () => {
   const { showModal, setShowModal } = useAppContext();
 
 
+  const [selectedDate, setSelectedDate] = useState<Date | null>(null);
 
   const [patientData, setPatientData] = useState<PatientData>({
     petname: "",
@@ -52,7 +53,7 @@ const CreatePatient: React.FC = () => {
     await addData(patientData);
     console.log("PATIENT DATA", patientData);
     setShowModal(false);
-    toast.success("Created Successfully", {
+    toast.success("Patient is successfully created!", {
       position: "bottom-left",
       autoClose: 300,
       hideProgressBar: false,
@@ -62,6 +63,13 @@ const CreatePatient: React.FC = () => {
       theme: "colored",
     });
   };
+
+  useEffect(() => {
+    setPatientData({
+      ...patientData,
+      dateOfBirth: selectedDate?.toDateString() || "",
+    });
+  }, [selectedDate]);
 
   return (
     <>
@@ -132,7 +140,7 @@ const CreatePatient: React.FC = () => {
                             Select a status
                           </option>
                           <option value="picky_eat">Picky Eater</option>
-                          <option value="allergy">Allergy</option>
+                          <option value="allergy">allergy</option>
                         </select>
                       </div>
                     </div>
@@ -230,11 +238,8 @@ const CreatePatient: React.FC = () => {
                           Date of birth
                         </label>
                         <DatePicker
-                          selected={new Date(patientData.dateOfBirth)}
-                          onChange={(date: any) => setPatientData({
-                            ...patientData,
-                            dateOfBirth: date?.toDateString() || "",
-                          })}
+                          selected={selectedDate}
+                          onChange={(date) => setSelectedDate(date)}
                           dateFormat="dd/MM/yyyy"
                           className="shadow appearance-none border inputBorder rounded  w-[17rem] p-2 mb-1  text-black"
                           placeholderText="Select Date"

@@ -68,7 +68,7 @@ const Table: React.FC<TableProps> = ({ data, setData, filteredPets, selectedData
           await axios.delete(
             `https://patient-list-w0nz.onrender.com/patients/${id}`
           );
-          toast.error("delected successfully!", {
+          toast.error("Patient is successfully delected!", {
             position: "bottom-left",
             autoClose: 300,
             theme: "colored",
